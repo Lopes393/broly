@@ -1,0 +1,16 @@
+{
+  "name": "murilo/broly",
+  "description": "Broly Feedback",
+  "autoload": {
+    "psr-4": {
+      "Src\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Murilo Lopes",
+      "email": "mloopes11@gmail.com"
+    }
+  ],
+  "require": {}
+}
