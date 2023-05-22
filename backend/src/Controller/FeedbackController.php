@@ -17,17 +17,17 @@ class FeedbackController
         // Configura o SMTP
         $mail->isSMTP();
         $mail->Host = 'mail.siap.com.br';
-        $mail->Port = 465;
-        $mail->SMTPAuth = true;
+        $mail->Port = 587;
+        $mail->SMTPSecure = 'tls';
+        $mail->SMTPAuth = 'true';
         $mail->Username = 'feedback@siap.com.br';
         $mail->Password = 'AAQ+DeKcTTt';
 
         // Configura o remetente e o destinatário
-        $mail->setFrom('feedback@siap.com.br', 'Feedback Siap');
-        $mail->addAddress($para);
-
-        // Configura o assunto e o corpo do email
+        $mail->setFrom($mail->Username, 'Feedback Siap');
+        $mail->addAddress($para, 'Murilo Lopes');
         $mail->Subject = $assunto;
+        $mail->isHTML(true);
         $mail->Body = $mensagem;
 
         if ($mail->send()) {

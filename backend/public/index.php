@@ -24,5 +24,4 @@ if (count($uri) > 4) {
     $uri = $uri[3];
 }
 
-//$rotas->executar($_SERVER['REQUEST_METHOD'], "/" . $uri);
-$rotas->executar('POST', "/" . 'feedback');
+$rotas->executar($_SERVER['REQUEST_METHOD'], "/" . $uri);
