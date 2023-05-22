@@ -1,7 +1,5 @@
 <?php
 
-namespace Lib;
-
 abstract class RouterAbstract
 {
     protected $rotas = [];
@@ -30,7 +28,8 @@ abstract class RouterAbstract
                 $params = array_combine($placeholders, array_slice($matches, 1));
 
                 $controller = new $rota['controller']();
-                $data = json_decode(file_get_contents('php://input'), true);
+                // $data = json_decode(file_get_contents('php://input'), true);
+                $data = ['feedback' => 'testando envio de rota'];
 
                 if ('POST' == $verb) {
                     $response = call_user_func_array([$controller, $rota['metodoController']], [$data]);
