@@ -10,20 +10,20 @@ class FeedbackController
     {
         $mail = new PHPMailer();
 
-        $para = "ti@siap.com.br.com";
+        $para = "mloopes11@gmail.com";
         $assunto = "Novo Feedback Recebido";
         $mensagem = $data['feedback'];
 
         // Configura o SMTP
         $mail->isSMTP();
         $mail->Host = 'mail.siap.com.br';
-        $mail->Port = 587;
+        $mail->Port = 465;
         $mail->SMTPAuth = true;
-        $mail->Username = 'seu_email@example.com';
-        $mail->Password = 'sua_senha';
+        $mail->Username = 'feedback@siap.com.br';
+        $mail->Password = 'AAQ+DeKcTTt';
 
         // Configura o remetente e o destinatário
-        $mail->setFrom('seu_email@example.com', 'Seu Nome');
+        $mail->setFrom('feedback@siap.com.br', 'Feedback Siap');
         $mail->addAddress($para);
 
         // Configura o assunto e o corpo do email
@@ -39,7 +39,7 @@ class FeedbackController
 
         return [
             'status' => 'error',
-            'message' => "Houve um erro ao enviar o Feedback!"
+            'message' => "Houve um erro ao enviar o Feedback!" . $mail->ErrorInfo
         ];
     }
 }
