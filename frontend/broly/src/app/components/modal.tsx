@@ -9,15 +9,11 @@ type ModalProps = {
   title: string;
 };
 
-const CustomModal: React.FC<ModalProps> = ({ show, onHide, onSubmit, data, title }) => {
-  const [payload, setPayload] = useState(data);
+const CustomModal: React.FC<ModalProps> = ({ show, onHide, onSubmit, title }) => {
+  const [feedback, setFeedback] = useState("");
 
-  const onChangeTipo = (event: any) => {
-    setPayload({ ...payload, type: event.target.value });
-  };
-
-  const onChangeDescricao = (event: any) => {
-    setPayload({ ...payload, description: event.target.value });
+  const onChangeFeedback = (event: any) => {
+    setFeedback(event.target.value);
   };
 
   return (
@@ -26,18 +22,10 @@ const CustomModal: React.FC<ModalProps> = ({ show, onHide, onSubmit, data, title
         <Modal.Title>{title}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <CustomInput
-          placeholder="Descrição"
-          className="input-modal"
-          value={payload?.description}
-          onChange={onChangeDescricao}
-        />
+        <textarea placeholder="Feedback..." className="input-modal" value={feedback} onChange={onChangeFeedback} />
       </Modal.Body>
       <div className="modal-footer">
-        <button className="btn btn-outline-close" type="button" onClick={onHide}>
-          Fechar
-        </button>
-        <button className="btn btn-outline-success" type="button" onClick={() => onSubmit(payload)}>
+        <button className="btn btn-outline-success" type="button" onClick={() => onSubmit(feedback)}>
           Salvar
         </button>
       </div>
