@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import lottie, { AnimationItem } from "lottie-web";
-import animationData from "./animation.json";
+import animationData from "../assets/animation.json";
 
 const SplashScreen: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);

@@ -1,5 +1,5 @@
 import "./globals.css";
-import "./broly.css";
+import "./styles/broly.css";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });

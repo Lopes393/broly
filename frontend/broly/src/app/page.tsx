@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import SplashScreen from "./splash";
+import SplashScreen from "./components/splash";
+import Content from "./pages/content";
 
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
@@ -12,15 +13,7 @@ export default function Home() {
   }, []);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <div className="content">
-        {showSplash ? (
-          <SplashScreen />
-        ) : (
-          <>
-            <h1>Conteúdo</h1>
-          </>
-        )}
-      </div>
+      <div className="content">{showSplash ? <SplashScreen /> : <Content />}</div>
     </main>
   );
 }
