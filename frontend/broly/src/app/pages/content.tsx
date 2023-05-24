@@ -16,17 +16,23 @@ const Content: React.FC = () => {
   };
 
   async function onSave(payload: any) {
+    console.log(payload);
     const response = await axios.post("http://localhost:8000/public/index/feedback", payload);
     setShowModal(false);
     Swal.fire({
       icon: response.data.status,
       title: response.data.message,
     });
+
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000);
   }
 
   return (
     <>
-      <CustomModal show={showModal} onHide={handleHideModal} onSubmit={onSave} title={title} />
+      <img className="logo" src="https://siap.com.br/wp-content/themes/siap/img/logomarca.png" />
+      <CustomModal show={showModal} onSubmit={onSave} title={title} />
     </>
   );
 };

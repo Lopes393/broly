@@ -9,11 +9,11 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setShowSplash(false);
-    }, 3000);
+    }, 2000);
   }, []);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <div className="content">{showSplash ? <SplashScreen /> : <Content />}</div>
+      <div className="content items-center ">{showSplash ? <SplashScreen /> : <Content />}</div>
     </main>
   );
 }

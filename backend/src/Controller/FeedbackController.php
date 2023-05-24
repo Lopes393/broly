@@ -10,7 +10,7 @@ class FeedbackController
     {
         $mail = new PHPMailer();
 
-        $para = "mloopes11@gmail.com";
+        $para = "t.alencar@siap.com.br";
         $assunto = "Novo Feedback Recebido";
         $mensagem = $data['feedback'];
 
