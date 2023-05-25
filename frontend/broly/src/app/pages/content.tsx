@@ -5,7 +5,8 @@ import Swal from "sweetalert2";
 
 const Content: React.FC = () => {
   const [showModal, setShowModal] = useState(true);
-  const title = "O seu feedback é importante para nós";
+  const title =
+    "O seu feedback é importante para que possamos analisar o nosso clima organizacional e seguirmos juntos para o próximo nível";
 
   const handleShowModal = () => {
     setShowModal(true);
