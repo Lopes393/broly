@@ -33,6 +33,11 @@ const Content: React.FC = () => {
     <>
       <img className="logo" src="https://siap.com.br/wp-content/themes/siap/img/logomarca.png" />
       <CustomModal show={showModal} onSubmit={onSave} title={title} />
+      <div className="developed">
+        <p>
+          &copy;Developed By <b>Murilo Lopes</b>
+        </p>
+      </div>
     </>
   );
 };
